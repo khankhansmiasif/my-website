@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Discover Khyber Pakhtunkhwa</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7f4;
+        color: #1d2b22;
+        line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 7%;
+        background: rgba(10, 25, 19, 0.92);
+        backdrop-filter: blur(10px);
+    }
+
+    .logo {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .logo span {
+        color: #d8b45a;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 28px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #d8b45a;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 20px 80px;
+
+        background:
+            linear-gradient(rgba(5, 20, 13, 0.55), rgba(5, 20, 13, 0.7)),
+            url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85");
+
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 7vw, 85px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: #e1c46b;
+    }
+
+    .hero p {
+        max-width: 700px;
+        margin: auto;
+        font-size: 19px;
+        color: #f1f1f1;
+    }
+
+    .hero-button {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 28px;
+        background: #d8b45a;
+        color: #16251d;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .hero-button:hover {
+        transform: translateY(-3px);
+        background: #efd47f;
+    }
+
+    /* GENERAL */
+
+    section {
+        padding: 90px 7%;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+
+    .section-title p {
+        color: #66736c;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    /* DESTINATIONS */
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .card-content h3 {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        color: #66736c;
+    }
+
+    /* FEATURE */
+
+    .feature {
+        background: #10251a;
+        color: white;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .feature img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .feature h2 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .feature p {
+        color: #d3ddd6;
+        margin-bottom: 20px;
+    }
+
+    .feature-list {
+        list-style: none;
+    }
+
+    .feature-list li {
+        margin: 12px 0;
+        color: #e4d08a;
+    }
+
+    /* CULTURE */
+
+    .culture {
+        background: #e9eee9;
+    }
+
+    .culture-box {
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .culture-box p {
+        font-size: 18px;
+        color: #536159;
+    }
+
+    /* CTA */
+
+    .cta {
+        text-align: center;
+        background:
+            linear-gradient(rgba(12, 35, 23, 0.88), rgba(12, 35, 23, 0.88)),
+            url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=85");
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .cta h2 {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        color: #d5ddd8;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background: #07140d;
+        color: #aebbb3;
+        text-align: center;
+        padding: 35px 20px;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+        nav {
+            padding: 15px 5%;
+        }
+
+        nav ul {
+            display: none;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .feature-grid {
+            grid-template-columns: 1fr;
+        }
+
+        section {
+            padding: 70px 5%;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+        }
+
+        .feature h2,
+        .cta h2 {
+            font-size: 34px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">
+        KPK <span>Discover</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#nature">Nature</a></li>
+        <li><a href="#culture">Culture</a></li>
+        <li><a href="#explore">Explore</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Discover the Beauty of
+            <span>Khyber Pakhtunkhwa</span>
+        </h1>
+
+        <p>
+            Explore breathtaking mountains, peaceful valleys,
+            crystal-clear lakes, rich traditions and the timeless
+            beauty of Khyber Pakhtunkhwa.
+        </p>
+
+        <a href="#destinations" class="hero-button">
+            Explore KPK
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- DESTINATIONS -->
+
+<section id="destinations">
+
+    <div class="section-title">
+
+        <h2>Beautiful Destinations</h2>
+
+        <p>
+            From majestic mountains to peaceful valleys,
+            discover some of the remarkable places across Khyber Pakhtunkhwa.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=85">
+
+            <div class="card-content">
+                <h3>Swat Valley</h3>
+                <p>
+                    A valley known for its dramatic mountains,
+                    rivers and beautiful landscapes.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85">
+
+            <div class="card-content">
+                <h3>Kumrat Valley</h3>
+                <p>
+                    Discover forests, rivers, mountains and
+                    peaceful natural surroundings.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85">
+
+            <div class="card-content">
+                <h3>Chitral</h3>
+                <p>
+                    Experience spectacular mountain scenery
+                    and the distinctive culture of the region.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NATURE -->
+
+<section class="feature" id="nature">
+
+    <div class="feature-grid">
+
+        <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1400&q=85">
+
+        <div>
+
+            <h2>Where Mountains Meet the Sky</h2>
+
+            <p>
+                Khyber Pakhtunkhwa is home to spectacular
+                mountain landscapes, green valleys, rivers,
+                forests and highland scenery.
+            </p>
+
+            <ul class="feature-list">
+                <li>✦ Majestic mountains</li>
+                <li>✦ Green valleys</li>
+                <li>✦ Beautiful rivers and lakes</li>
+                <li>✦ Forests and peaceful landscapes</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CULTURE -->
+
+<section class="culture" id="culture">
+
+    <div class="section-title">
+
+        <h2>Culture & Heritage</h2>
+
+    </div>
+
+    <div class="culture-box">
+
+        <p>
+            The beauty of Khyber Pakhtunkhwa is not limited to
+            its landscapes. Its traditions, hospitality, history,
+            crafts, music, clothing and food form an important
+            part of the region's identity.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="explore">
+
+    <h2>Explore. Experience. Remember.</h2>
+
+    <p>
+        Discover the landscapes and stories of Khyber Pakhtunkhwa.
+    </p>
+
+    <a href="#home" class="hero-button">
+        Back to Top
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>KPK Discover</strong> — Celebrating the beauty of
+        Khyber Pakhtunkhwa
+    </p>
+
+    <p style="margin-top:10px;">
+        © 2026 KPK Discover. All rights reserved.
+    </p>
+
+</footer>
+```
+
+</body>
+</html>
